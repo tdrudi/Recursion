@@ -79,22 +79,6 @@ function gatherStrings(obj) {
   return strArr;
 }
 
-/** binarySearch: given a sorted array of numbers, and a value,
- * return the index of that value (or -1 if val is not present). */
-
-function binarySearch(arr, val, leftIdx = 0, rightIdx = arr.length) {
-  if (leftIdx > rightIdx)
-    return -1;
-
-  let middleIdx = Math.floor((leftIdx + rightIdx)/2);
-  if(arr[middleIdx] === val)
-    return middleIdx;
-  if (arr[middleIdx] > val)
-    return binarySearch(arr, val, leftIdx, middle -1);
-
-  return binarySearch(arr, val, middle + 1, rightIdx);
-}
-
 module.exports = {
   product,
   longest,
@@ -103,5 +87,4 @@ module.exports = {
   findIndex,
   revString,
   gatherStrings,
-  binarySearch
 };
